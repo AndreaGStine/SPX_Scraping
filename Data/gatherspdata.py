@@ -123,27 +123,27 @@ def get_financial_data(ticker, driver):
     return df
 
 
-# currentconstituents, spxchanges, spxstocks, grouped_spx = get_tickers()
-#
-# with open('spxstocks.pkl', 'wb') as file:
-#     pickle.dump([currentconstituents, spxchanges, spxstocks, grouped_spx], file)
+currentconstituents, spxchanges, spxstocks, grouped_spx = get_tickers()
+
+with open('spxstocks.pkl', 'wb') as file:
+    pickle.dump([currentconstituents, spxchanges, spxstocks, grouped_spx], file)
 
 
 
 
-# # Let's assume spxstocks['Ticker'] contains the tickers of the S&P 500 companies
-# stock_prices = {}
-# for ticker in grouped_spx['Ticker']:
-#     stock_prices[ticker] = get_stock_price_data(ticker)
-#
-# # Save the all_data dictionary to a pickle file
-# with open('stock_prices.pkl', 'wb') as file:
-#     pickle.dump(stock_prices, file)
+# Let's assume spxstocks['Ticker'] contains the tickers of the S&P 500 companies
+stock_prices = {}
+for ticker in grouped_spx['Ticker']:
+    stock_prices[ticker] = get_stock_price_data(ticker)
+
+# Save the all_data dictionary to a pickle file
+with open('stock_prices.pkl', 'wb') as file:
+    pickle.dump(stock_prices, file)
 
 
 
 # Path to the ChromeDriver executable
-CHROMEDRIVER_PATH = r"C:\Users\Andrea\Downloads\chromedriver-win64\chromedriver-win64\chromedriver.exe"
+CHROMEDRIVER_PATH = r"/usr/local/bin/chromedriver/chromedriver"
 
 chrome_options = Options()
 # Mimic a real browser request
